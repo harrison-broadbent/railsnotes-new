@@ -1,0 +1,11 @@
+<%#
+  Wraps markdown_layout.erb with layout.erb
+  (this gets inserted into the "yield" in layout.erb)
+%>
+<% wrap_layout :layout do %>
+  <h1 class="mb-2 font-serif text-stone-950 text-2xl"><%= current_page.data.title %></h1>
+  <span class="mb-6 text-stone-500"><%= format_date(current_page.data.date) %> — Harrison Broadbent</span>
+  <div id="prose-content" class="prose">
+    <%= yield %>
+  </div>
+<% end %>

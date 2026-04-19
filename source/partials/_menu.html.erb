@@ -1,0 +1,10 @@
+<% pages = {
+    home: "/",
+		blog: "/blog",
+    about: "/about",
+  } %>
+<div class="flex items-center gap-x-4 mb-8">
+  <% pages.each do |name, path|%>
+    <%= link_to name, path %>
+  <% end%>
+</div>
