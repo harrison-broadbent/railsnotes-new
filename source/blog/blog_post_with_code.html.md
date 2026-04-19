@@ -14,9 +14,7 @@ This is styling with the Rouge "Base16 Solarized" theme[^1]. You can view a full
 
 Here's some code examples:
 
-```ruby
-# ruby
-#
+```ruby:ruby
 def hello(name)
 	puts "hello, #{name}"
 end
@@ -24,9 +22,7 @@ end
 hello("world!")
 ```
 
-```python
-# python
-#
+```python:python
 def hello(str):
     print('hello, ', str)
 
@@ -34,8 +30,6 @@ hello('world!')
 ```
 
 ```c
-// c
-//
 #include <stdio.h>
 
 int main() {

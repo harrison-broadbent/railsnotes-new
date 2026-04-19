@@ -53,9 +53,22 @@ a {
   @apply text-stone-500 text-sm;
 }
 
+/* code block titles */
+.code-title {
+  @apply bg-stone-50 px-3 py-1.5 border border-stone-200 border-b-0 rounded-t-md font-mono text-stone-700 text-xs;
+}
+
+.code-title + .highlight {
+  @apply mt-0;
+}
+
+.code-title + .highlight > pre.highlight {
+  @apply mt-0 !rounded-t-none;
+}
+
 /* code blocks */
 #prose-content pre.highlight {
-  @apply bg-stone-50 border border-stone-200 rounded-md text-[13px];
+  @apply bg-stone-50/10 border border-stone-200 rounded-md text-[13px];
 }
 
 /* inline code */

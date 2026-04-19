@@ -43,6 +43,9 @@ page "/*.txt", layout: false
 # MARKDOWN
 #
 activate :syntax                    # code highlighting
+
+require_relative "lib/code_title_support"
+Kramdown::Converter::Html.prepend(CodeTitleSupport)
 set :markdown_engine, :kramdown     # md parsing
 set :markdown,                      # config for :kramdown
     input: "GFM",
