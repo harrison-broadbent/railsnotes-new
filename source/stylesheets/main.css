@@ -6,27 +6,59 @@
 }
 
 a {
-  @apply text-stone-700 hover:text-stone-600 underline;
+  @apply decoration-1 decoration-stone-400 hover:decoration-stone-600 underline underline-offset-[2.5px] transition-colors;
 }
 
 #prose-content {
-  @apply prose-img:mb-2 text-pretty prose-headings:tracking-tight;
+  font-size: 17px;
+}
+
+#prose-content p {
+  @apply my-5 text-stone-950;
+}
+
+#prose-content h2 {
+  @apply mt-12 mb-2 font-medium text-xl;
+}
+
+#prose-content h3 {
+  @apply mt-8 mb-2 font-medium text-lg;
+}
+
+#prose-content strong {
+  @apply font-medium;
+}
+
+#prose-content em {
+  @apply font-medium;
+}
+
+#prose-content ol {
+  @apply space-y-2 pl-6 list-decimal;
+}
+
+#prose-content ul {
+  @apply space-y-1 pl-6 list-disc;
+}
+
+#prose-content li {
+  @apply pl-1;
+}
+
+#prose-content img {
+  @apply my-4 border border-stone-200 rounded-md;
 }
 
 #prose-content > p > img + em {
   @apply text-stone-500 text-sm;
 }
 
-/* code blocks (not inline!) */
+/* code blocks */
 #prose-content pre.highlight {
-  @apply bg-stone-50 border border-stone-200 rounded-md;
+  @apply bg-stone-50 border border-stone-200 rounded-md text-[13px];
 }
 
-/*
-  inline code (not code blocks!)
-	we target .prose p code, rather than using prose-code:, so that we
-	only format inline code blocks.
-*/
+/* inline code */
 .prose p code::before,
 .prose li code::before {
   content: "";
@@ -39,7 +71,7 @@ a {
 
 .prose p code,
 .prose li code {
-  @apply bg-stone-100 px-1.5 py-0.5 border border-stone-200 rounded-md font-semibold text-stone-800;
+  @apply bg-stone-100 px-1.5 py-0.5 border border-stone-200 rounded-sm font-medium text-sm;
 }
 
 .prose blockquote ::before {
@@ -56,4 +88,23 @@ a {
 
 .prose blockquote * ::after {
   content: "";
+}
+
+/* footnotes / sidenotes */
+.sidenote {
+  @apply block w-full text-stone-600 text-sm;
+}
+
+.sidenote p {
+  @apply !my-0;
+}
+
+.sidenote a {
+  @apply decoration-1 decoration-stone-400 hover:decoration-stone-600 underline underline-offset-[2.5px] transition-colors;
+}
+
+@media (min-width: 1400px) {
+  .sidenote {
+    @apply top-[var(--footnote-top)] right-[-320px] absolute w-64;
+  }
 }

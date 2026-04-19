@@ -7,9 +7,9 @@ summary: Run RSpec in parallel and speedup your specs by 2x-4x locally using the
 images: ["/static/images/parallel_rspec/cover.png"]
 ---
 
-In this article, I explain how to run your RSpec tests in parallel — and bank a `2x-4x` speedup in the process — using the [parallel_rspec](https://github.com/willbryant/parallel_rspec) gem
-
-[parallel_rspec](https://github.com/willbryant/parallel_rspec) is a great gem that makes it easy to run your specs in parallel — it handles cloning your database and running tests across `N` parallel workers. Further down I also [benchmark the optimal number of workers](#fine-tuning-the-number-of-workers) and... turns out the defaults are pretty perfect 😅
+> In this article, I explain how to run your RSpec tests in parallel — and bank a `2x-4x` speedup in the process — using the [parallel_rspec](https://github.com/willbryant/parallel_rspec) gem
+>
+> [parallel_rspec](https://github.com/willbryant/parallel_rspec) is a great gem that makes it easy to run your specs in parallel — it handles cloning your database and running tests across `N` parallel workers. Further down I also [benchmark the optimal number of workers](#fine-tuning-the-number-of-workers) and... turns out the defaults are pretty perfect 😅
 
 <details>
 <summary>Table of Contents</summary>
