@@ -1,0 +1,3 @@
+- bin/ci script
+- moving over from JS to Middleman
+- organizations and entitlements

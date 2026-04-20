@@ -631,6 +631,9 @@
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
   }
+  .mt-auto {
+    margin-top: auto;
+  }
   .mb-1 {
     margin-bottom: calc(var(--spacing) * 1);
   }
@@ -661,11 +664,20 @@
   .h-full {
     height: 100%;
   }
+  .min-h-screen {
+    min-height: 100vh;
+  }
   .w-full {
     width: 100%;
   }
   .max-w-2xl {
     max-width: var(--container-2xl);
+  }
+  .max-w-24 {
+    max-width: calc(var(--spacing) * 24);
+  }
+  .max-w-32 {
+    max-width: calc(var(--spacing) * 32);
   }
   .max-w-xl {
     max-width: var(--container-xl);
@@ -704,6 +716,9 @@
       margin-inline-start: calc(calc(var(--spacing) * 4) * var(--tw-space-x-reverse));
       margin-inline-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-x-reverse)));
     }
+  }
+  .rounded-none {
+    border-radius: 0;
   }
   .border-t {
     border-top-style: var(--tw-border-style);
@@ -770,6 +785,16 @@
   .antialiased {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+  .\*\:\!rounded-none {
+    :is(& > *) {
+      border-radius: 0 !important;
+    }
+  }
+  .\*\:rounded-none {
+    :is(& > *) {
+      border-radius: 0;
+    }
   }
   .hover\:text-stone-700 {
     &:hover {
