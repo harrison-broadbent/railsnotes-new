@@ -5,7 +5,14 @@
 <% wrap_layout :layout do %>
   <h1 class="mb-1 font-medium text-stone-950 text-xl md:text-2xl leading-tight"><%= current_page.data.title %></h1>
   <% if current_page.data.date%>
-    <p class="mb-6 text-stone-500"><%= format_date(current_page.data.date) %> — Harrison Broadbent</p>
+    <div class="flex flex-row items-center gap-x-2 mb-6 text-stone-500">
+      <p><%= format_date(current_page.data.date) %></p>
+      <p>---</p>
+      <p class="inline-flex flex-row items-center gap-x-1">
+        <%= image_tag 'images/profile.jpg', class: "rounded-full size-4" %>
+        <%= link_to 'Harrison Broadbent', "/about", class: "hover:text-stone-700" %>
+      </p>
+    </div>
   <% end %>
   <div id="prose-content" class="relative prose">
     <%= yield %>
