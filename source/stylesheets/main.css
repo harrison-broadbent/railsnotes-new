@@ -6,7 +6,7 @@
 }
 
 a {
-  @apply decoration-1 decoration-stone-400 hover:decoration-stone-600 underline underline-offset-[2.5px] transition-colors;
+  @apply decoration-1 decoration-stone-400 hover:decoration-rose-500 underline underline-offset-[2.5px] transition-colors;
 }
 
 #prose-content {
@@ -52,10 +52,18 @@ a {
 #prose-content > p > img + em {
   @apply text-stone-500 text-sm;
 }
+/*
+#prose-content blockquote {
+  @apply bg-stone-100 *:my-3 px-3 py-1 border-l-2 border-l-rose-500 rounded-r-sm *:text-stone-900;
+} */
+
+#prose-content blockquote {
+  @apply border-l-3 border-l-rose-500;
+}
 
 /* code block titles */
 .code-title {
-  @apply bg-stone-50 px-3 py-1.5 border border-stone-200 border-b-0 rounded-t-md font-mono text-stone-700 text-xs;
+  @apply bg-stone-50 px-3 py-2 border border-stone-200 border-b-0 rounded-t-md font-mono text-stone-500 text-xs;
 }
 
 .code-title + .highlight {
@@ -103,6 +111,11 @@ a {
   content: "";
 }
 
+/* table of contents */
+#toc a {
+  text-decoration: none;
+}
+
 /* footnotes / sidenotes */
 .sidenote {
   @apply block w-full text-stone-600 text-sm;
@@ -113,7 +126,7 @@ a {
 }
 
 .sidenote a {
-  @apply decoration-1 decoration-stone-400 hover:decoration-stone-600 underline underline-offset-[2.5px] transition-colors;
+  @apply decoration-1 decoration-stone-400 hover:decoration-rose-500 underline underline-offset-[2.5px] transition-colors;
 }
 
 @media (min-width: 1400px) {

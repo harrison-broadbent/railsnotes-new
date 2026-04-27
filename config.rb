@@ -1,8 +1,8 @@
 # Template config
 #
-set :site_url, "https://ruby-middleman-tailwind-starter-blog.pages.dev" # for sitemap.xml.builder
-set :site_title, "Ruby, Middleman & Tailwind Starter Kit"                     # site title for <title> meta tag
-set :trailing_slash, false                                                 # turn site.com/home/ -> site.com/home
+set :site_url, "https://railsnotes.xyz" # for sitemap.xml.builder
+set :site_title, "Railsnotes"           # site title for <title> meta tag
+set :trailing_slash, false              # turn site.com/home/ -> site.com/home
 
 # Extensions
 #
