@@ -1,0 +1,1 @@
+- Code icons are from simple icons: https://simpleicons.org/
