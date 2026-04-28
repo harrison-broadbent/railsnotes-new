@@ -1,8 +1,21 @@
-<ul>
+<!--
+<ul class="!pl-0">
   <% blog.articles.each do |article| %>
-    <li class="space-x-4">
-      <time>[<%= article.date.strftime('%b %e %Y') %>]</time>
+    <li class="flex space-x-4">
+      <time class="block w-36 shrink-0">[<%= article.date.strftime('%b %e %Y') %>]</time>
       <%= link_to article.title, article.url %>
+    </li>
+  <% end %>
+</ul>
+-->
+<ul class="!pl-0">
+  <% blog.articles.each do |article| %>
+    <li class="flex space-x-4">
+      <time class="block w-24 shrink-0">[<%= article.date.strftime('%b %Y') %>]</time>
+      <div class="">
+        <%= link_to article.title, article.url %>
+        <p class="!text-stone-700 italic"><%= article.data.description %></p>
+      </div>
     </li>
   <% end %>
 </ul>

@@ -3,7 +3,7 @@ title: Run RSpec specs in parallel (with the parallel_rspec gem)
 date: "2025-10-01"
 tags: ["rspec", "tests"]
 draft: false
-summary: Run RSpec in parallel and speedup your specs by 2x-4x locally using the handy parallel_rspec gem.
+description: Run RSpec in parallel and speedup your specs by 2x-4x locally using the handy parallel_rspec gem.
 images: ["/static/images/parallel_rspec/cover.png"]
 ---
 
@@ -17,7 +17,7 @@ images: ["/static/images/parallel_rspec/cover.png"]
 
 **RSpec runs specs serially in a single CPU process.** That is, one-by-one, using a single lonesome CPU core from your beefy dev machine. This is in contrast to [Minitest + Rails, which natively supports parallel testing](https://guides.rubyonrails.org/testing.html#parallel-testing-with-processes).
 
-Given modern development machines typically have 8, 16, even 32+ powerful CPU cores, and plenty of RAM to boot, it would be great if we could **actually make use of that hardware** to run our specs in parallel (and hence much faster!).
+Given modern development machines typically have 8, 16, even 32+ powerful CPU cores, and plenty of RAM to boot, it would be great if we could **actually make use of that hardware** when running our test suite.
 
 We'd expect a sizeable speedup, and that's exactly what we see, if we run our RSpec specs with a gem like [parallel_rspec](https://github.com/willbryant/parallel_rspec). This gem makes it easy to run specs across `N` parallel workers (default `N=4`), leading to a `2x-4x` speedup (approx).
 
