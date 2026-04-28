@@ -207,23 +207,8 @@
   .end {
     inset-inline-end: var(--spacing);
   }
-  .top-1\/2 {
-    top: calc(1 / 2 * 100%);
-  }
-  .top-32 {
-    top: calc(var(--spacing) * 32);
-  }
-  .top-36 {
-    top: calc(var(--spacing) * 36);
-  }
   .top-40 {
     top: calc(var(--spacing) * 40);
-  }
-  .top-42 {
-    top: calc(var(--spacing) * 42);
-  }
-  .top-48 {
-    top: calc(var(--spacing) * 48);
   }
   .mx-auto {
     margin-inline: auto;
@@ -713,20 +698,8 @@
   .max-w-xl {
     max-width: var(--container-xl);
   }
-  .-translate-x-64 {
-    --tw-translate-x: calc(var(--spacing) * -64);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
-  .-translate-x-72 {
-    --tw-translate-x: calc(var(--spacing) * -72);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
   .-translate-x-84 {
     --tw-translate-x: calc(var(--spacing) * -84);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
-  .-translate-y-1\/2 {
-    --tw-translate-y: calc(calc(1 / 2 * 100%) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .list-disc {
@@ -796,14 +769,8 @@
   .p-4 {
     padding: calc(var(--spacing) * 4);
   }
-  .pl-1 {
-    padding-left: calc(var(--spacing) * 1);
-  }
   .pl-1\.5 {
     padding-left: calc(var(--spacing) * 1.5);
-  }
-  .pl-3 {
-    padding-left: calc(var(--spacing) * 3);
   }
   .font-sans {
     font-family: var(--font-sans);
@@ -826,10 +793,6 @@
   .text-xl {
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
-  }
-  .text-xs {
-    font-size: var(--text-xs);
-    line-height: var(--tw-leading, var(--text-xs--line-height));
   }
   .text-\[13px\] {
     font-size: 13px;
@@ -918,11 +881,6 @@
       display: block;
     }
   }
-  .\32 xl\:block {
-    @media (width >= 96rem) {
-      display: block;
-    }
-  }
 }
 a {
   text-decoration-line: underline;
@@ -1008,6 +966,9 @@ a {
   border-left-color: var(--color-rose-500);
 }
 .code-title {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 1.5);
   border-top-left-radius: var(--radius-md);
   border-top-right-radius: var(--radius-md);
   border-style: var(--tw-border-style);
@@ -1022,6 +983,11 @@ a {
   font-size: var(--text-xs);
   line-height: var(--tw-leading, var(--text-xs--line-height));
   color: var(--color-stone-500);
+}
+.code-title svg {
+  width: calc(var(--spacing) * 3);
+  height: calc(var(--spacing) * 3);
+  flex-shrink: 0;
 }
 .code-title + .highlight {
   margin-top: calc(var(--spacing) * 0);

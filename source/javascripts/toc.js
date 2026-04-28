@@ -31,8 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
     a.textContent = heading.textContent;
-    a.className =
-      "toc-link font-sans block text-[13px] no-underline transition-colors duration-150 text-stone-400 hover:text-stone-600";
+    a.className = "toc-link font-sans block text-[13px] no-underline transition-colors duration-150 text-stone-400 hover:text-stone-600";
     a.setAttribute("data-target", heading.id);
 
     if (heading.tagName === "H3") {

@@ -11,14 +11,6 @@ images: ["/static/images/parallel_rspec/cover.png"]
 >
 > [parallel_rspec](https://github.com/willbryant/parallel_rspec) is a great gem that makes it easy to run your specs in parallel — it handles cloning your database and running tests across `N` parallel workers. Further down I also [benchmark the optimal number of workers](#fine-tuning-the-number-of-workers) and... turns out the defaults are pretty perfect 😅
 
-<details>
-<summary>Table of Contents</summary>
-<aside markdown="1">
-* seed list
-{:toc}
-</aside>
-</details>
-
 ---
 
 ## Overview
