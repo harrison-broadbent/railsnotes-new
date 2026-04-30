@@ -4,7 +4,7 @@ date: "2025-05-30"
 tags: ["blazer", "analytics", "gem", "bi"]
 draft: false
 description: Learn how to use the Blazer gem in your Ruby on Rails app to query data in SQL, build dashboards, and run automated checks.
-images: ["/static/images/blazer-gem-rails/cover.png"]
+images: ["images/blog/blazer-gem-rails/cover.png"]
 ---
 
 > Learn about the [Blazer gem](https://github.com/ankane/blazer), the easiest way to query data from your Ruby on Rails apps.
@@ -32,7 +32,7 @@ You'll probably spend about 90% of your time in Blazer crafting queries.
 
 Here's Blazer's query page:
 
-![The results page of a typical Blazer query: the auto-generated chart is a really cool touch.](/static/images/blazer-gem-rails/dashboard.png)
+![The results page of a typical Blazer query: the auto-generated chart is a really cool touch.](images/blog/blazer-gem-rails/dashboard.png)
 
 Your actual SQL query lives in the top-left, with the results below. Here, you can see Blazer's first trick: **charts**.
 
@@ -75,7 +75,7 @@ Blazer lets you group multiple queries together into a dashboard ([official exam
 
 Here's a screenshot from that [dashboard example](https://blazer.dokkuapp.com/dashboards/1-dashboard-demo):
 
-![Blazer lets you easily group queries together into dashboards. They're handy, but not very high-density (visually). A 2-column layout would be game-changing.](/static/images/blazer-gem-rails/dashboard_multiple.png)
+![Blazer lets you easily group queries together into dashboards. They're handy, but not very high-density (visually). A 2-column layout would be game-changing.](images/blog/blazer-gem-rails/dashboard_multiple.png)
 
 Dashboards work well — It's vastly easier to open 1 dashboard vs. N different queries.
 
@@ -89,7 +89,7 @@ It would be awesome to, one day, see a 2-column layout. You'd be able to fit mor
 
 Blazer _also supports_ (wow it supports a lot of stuff, doesn't it?) [Checks](https://github.com/ankane/blazer?tab=readme-ov-file#checks).
 
-![Checks run in the background on a timer, and notify you if they fail](/static/images/blazer-gem-rails/check.png)
+![Checks run in the background on a timer, and notify you if they fail](images/blog/blazer-gem-rails/check.png)
 
 Checks are [queries that run at set intervals](https://blazer.dokkuapp.com/checks), and automatically alert you if they fail.
 
@@ -152,7 +152,7 @@ end
 
 If you choose the basic auth option, you'll login to your Blazer dashboard like this:
 
-![Securing Blazer behind basic auth](/static/images/blazer-gem-rails/auth.png)
+![Securing Blazer behind basic auth](images/blog/blazer-gem-rails/auth.png)
 
 It would be wise to also set up a [read-only user for Blazer](https://github.com/ankane/blazer?tab=readme-ov-file#permissions), although I tend to skip this step myself. I'd do this if multiple people were going to use Blazer though (it's easy to setup anyway: just a single command inside your database console).
 

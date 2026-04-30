@@ -4,7 +4,7 @@ date: "2023-09-17"
 tags: ["rspec", "testing", "refactoring"]
 draft: false
 description: In this article, I break down the difference between system specs and feature specs in RSpec and Rails, and walk you through refactoring your feature specs to system specs.
-images: ["/static/images/feature-specs-to-system-specs/cover.png"]
+images: ["images/blog/feature-specs-to-system-specs/cover.png"]
 ---
 
 > I've been writing feature specs for a while. Turns out, they should have been system specs instead! Maybe you've done the same, and I wouldn't blame you — there's not much good info available, and it's hard to find out what the differences are.
@@ -126,7 +126,7 @@ If you're on another operating system, you'll have to make sure you've correctly
 
 Once it's installed though, your system specs should work! RSpec should be able to load `selenium` correctly and interact with your specs.
 
-![RSpec running my system specs with chromedriver.](/static/images/feature-specs-to-system-specs/chromedriven.gif)
+![RSpec running my system specs with chromedriver.](images/blog/feature-specs-to-system-specs/chromedriven.gif)
 
 > Note: I replaced `selenium_chrome_headless`, with `selenium_chrome` inside `rails_helper.rb` to run my specs in "headed mode" for the gif above. This lets you see what RSpec and `selenium` are actually _doing_, which is fun to watch and can be helpful for debugging.
 

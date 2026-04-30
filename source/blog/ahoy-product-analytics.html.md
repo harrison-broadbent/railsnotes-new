@@ -4,7 +4,7 @@ date: "2025-05-30"
 tags: ["ahoy", "analytics", "gem"]
 draft: false
 description: Learn how to use the Ahoy gem to track feature usage within your Ruby on Rails apps.
-images: ["/static/images/ahoy-product-analytics/cover.png"]
+images: ["images/blog/ahoy-product-analytics/cover.png"]
 ---
 
 > Learn how to use the [Ahoy gem](https://github.com/ankane/ahoy) to track utilization of features inside your app. With just a few lines of code, you can track which features your users are interacting with (plus: filter out prefetch requests for cleaner data).
@@ -135,7 +135,7 @@ ORDER BY events DESC;
 
 Blazer will automatically render your results as a chart like this:
 
-![Ahoy::Events grouped by controller, rendered automatically by Blazer into a bar chart](/static/images/ahoy-product-analytics/blazer.png)
+![Ahoy::Events grouped by controller, rendered automatically by Blazer into a bar chart](images/blog/ahoy-product-analytics/blazer.png)
 
 You'll get results like this:
 

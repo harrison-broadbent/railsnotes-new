@@ -6,7 +6,7 @@ draft: false
 description: This is the ultimate Dokku + Ruby on Rails guide — I cover running Dokku on x86 and ARM, deploying Sidekiq and Redis, dockerizing our Ruby on Rails app, and more...
 images:
   [
-    "/static/images/deploying-ruby-on-rails-with-dokku-redis-sidekiq-arm-docker-hetzner/cover.png",
+    "images/blog/deploying-ruby-on-rails-with-dokku-redis-sidekiq-arm-docker-hetzner/cover.png",
   ]
 ---
 
@@ -302,7 +302,7 @@ Looks good!
 
 Now finally, visit `http://test-rails.your.ip.sslip.io/posts/index`, and you should see the `posts#index` page for your Ruby on Rails app —
 
-![Our Ruby on Rails app successfully deployed to our VPS with Dokku](/static/images/deploying-ruby-on-rails-with-dokku-redis-sidekiq-arm-docker-hetzner/vps-app.png)
+![Our Ruby on Rails app successfully deployed to our VPS with Dokku](images/blog/deploying-ruby-on-rails-with-dokku-redis-sidekiq-arm-docker-hetzner/vps-app.png)
 
 Congratulations! Your Ruby on Rails app is now deployed and running on your Dokku server. If you wait a minute, you should see our `sidekiq-cron` job automatically create a `Post`.
 
@@ -431,7 +431,7 @@ dokku ports:set test-rails http:80:3000
 
 Again, you should be able to visit `http://test-rails.server.ip.sslip.io/posts/index`, and see the `posts#index` page for your Ruby on Rails app —
 
-![Our Ruby on Rails app successfully deployed to our VPS with Dokku — but this time, with Docker!](/static/images/deploying-ruby-on-rails-with-dokku-redis-sidekiq-arm-docker-hetzner/vps-app.png)
+![Our Ruby on Rails app successfully deployed to our VPS with Dokku — but this time, with Docker!](images/blog/deploying-ruby-on-rails-with-dokku-redis-sidekiq-arm-docker-hetzner/vps-app.png)
 
 ## Fine tuning our Dokku deployment
 
@@ -469,7 +469,7 @@ A Record  www   your.server.ip.address  1 min
 
 I used [Namecheap](https://namecheap.pxf.io/NkQrR2) for my domains, and I ended up with something like this —
 
-![With our DNS records setup correctly, we should be able to access our Dokku app via it's URL](/static/images/deploying-ruby-on-rails-with-dokku-redis-sidekiq-arm-docker-hetzner/namecheap-records.png)
+![With our DNS records setup correctly, we should be able to access our Dokku app via it's URL](images/blog/deploying-ruby-on-rails-with-dokku-redis-sidekiq-arm-docker-hetzner/namecheap-records.png)
 
 After that, we just need to configure a few things on our Dokku server. The following commands install the [Dokku LetsEncrypt plugin](https://github.com/dokku/dokku-letsencrypt) to automatically issue a TLS certificate for us (so we can use HTTPS on our domain).
 
@@ -494,7 +494,7 @@ dokku letsencrypt:cron-job --add
 
 Now if we visit `newdomain.com` in our browser, it should work and serve us our app. If you visit `newdomain.com/posts/index`, you should see the same posts page as before —
 
-![Our Ruby on Rails app deployed live using Dokku, with SSL configured correctly.](/static/images/deploying-ruby-on-rails-with-dokku-redis-sidekiq-arm-docker-hetzner/url-deploy.png)
+![Our Ruby on Rails app deployed live using Dokku, with SSL configured correctly.](images/blog/deploying-ruby-on-rails-with-dokku-redis-sidekiq-arm-docker-hetzner/url-deploy.png)
 
 Nice!
 
@@ -633,7 +633,7 @@ touch .github/workflows/deploy.yml
 
 Then we can add a workflow like this to, which I based on the [simple example](https://github.com/dokku/github-action/blob/master/example-workflows/simple.yml) from Dokku —
 
-```yml:.github/workflows/deploy.yml
+```yaml:.github/workflows/deploy.yml
 ---
 name: 'Dokku auto-deploy main branch'
 
@@ -665,7 +665,7 @@ This GitHub action will trigger each time we `push` to the `main` branch of our 
 
 We need to set the environment variable. You can do this by going to **Settings -> Secrets and variables -> Actions** and adding an `SSH_PRIVATE_KEY` secret.
 
-![Adding a SSH private key to GitHub will let us autmatically deploy our Ruby on Rails app to Dokku](/static/images/deploying-ruby-on-rails-with-dokku-redis-sidekiq-arm-docker-hetzner/github-private-key.png)
+![Adding a SSH private key to GitHub will let us autmatically deploy our Ruby on Rails app to Dokku](images/blog/deploying-ruby-on-rails-with-dokku-redis-sidekiq-arm-docker-hetzner/github-private-key.png)
 
 This value should be the **private key** matching the **public key** we added to our server.
 
@@ -683,7 +683,7 @@ I copied that over to GitHub, which allows our GitHub action to connect to our s
 
 Let's give it a go! If you push to your `main` branch or merge in some code, you'll see something like this —
 
-![Our GitHub actions will run and deploy our app](/static/images/deploying-ruby-on-rails-with-dokku-redis-sidekiq-arm-docker-hetzner/github-actions.png)
+![Our GitHub actions will run and deploy our app](images/blog/deploying-ruby-on-rails-with-dokku-redis-sidekiq-arm-docker-hetzner/github-actions.png)
 
 Our GitHub action will trigger a new deployment to Dokku, and the latest version of our Ruby on Rails app will get deployed by Dokku.
 
@@ -863,7 +863,7 @@ Then, run our development environment with -
 
 and if we visit `localhost:3000/posts/index`, we should see our app running —
 
-![Our Ruby on Rails sample app with Sidekiq, a cron job, and Redis is running locally! Now to deploy it with Dokku](/static/images/deploying-ruby-on-rails-with-dokku-redis-sidekiq-arm-docker-hetzner/local-app.png)
+![Our Ruby on Rails sample app with Sidekiq, a cron job, and Redis is running locally! Now to deploy it with Dokku](images/blog/deploying-ruby-on-rails-with-dokku-redis-sidekiq-arm-docker-hetzner/local-app.png)
 
 Perfect!
 

@@ -5,7 +5,7 @@ description: "A full guide for deploying a Ruby on Rails app to Render with a da
 tags: ["render", "deployment"]
 images:
   [
-    "/static/images/deploying-ruby-on-rails-on-render-with-databse-redis-sidekiq-cron/cover.png",
+    "images/blog/deploying-ruby-on-rails-on-render-with-databse-redis-sidekiq-cron/cover.png",
   ]
 ---
 
@@ -17,7 +17,7 @@ Today, I wanted to share my experience setting up a decently complex Ruby on Rai
 
 Heres a screenshot of the final Render dashboard —
 
-![The final Render.com dashboard after deploying our Rails app, a PostgreSQL databse, Redis, Sidekiq, and a Cron job.](/static/images/deploying-ruby-on-rails-on-render-with-databse-redis-sidekiq-cron/render-dashboard.png)
+![The final Render.com dashboard after deploying our Rails app, a PostgreSQL databse, Redis, Sidekiq, and a Cron job.](images/blog/deploying-ruby-on-rails-on-render-with-databse-redis-sidekiq-cron/render-dashboard.png)
 
 Even though Render does have a guide on [deploying Rails with a database, Redis, and Sidekiq](https://render.com/docs/deploy-rails-sidekiq), the guide doesn't cover how to set up Cron jobs to trigger Sidekiq tasks.
 

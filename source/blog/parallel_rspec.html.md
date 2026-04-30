@@ -4,7 +4,7 @@ date: "2025-10-01"
 tags: ["rspec", "tests"]
 draft: false
 description: Run RSpec in parallel and speedup your specs by 2x-4x locally using the handy parallel_rspec gem.
-images: ["/static/images/parallel_rspec/cover.png"]
+images: ["images/blog/parallel_rspec/cover.png"]
 ---
 
 > Learn how to run your RSpec tests in parallel — and bank a `2x-4x` speedup in the process — using the [parallel_rspec](https://github.com/willbryant/parallel_rspec) gem
@@ -104,7 +104,7 @@ I've benchmarked `prspec` using `1-8` workers. The (rough and only vaguely scien
 
 Here's that data plotted:
 
-![In my testing, the default WORKERS value of 4 was optimal and led to specs running the quickest.](/static/images/parallel_rspec/optimal_threads.png)
+![In my testing, the default WORKERS value of 4 was optimal and led to specs running the quickest.](images/blog/parallel_rspec/optimal_threads.png)
 
 I've run similar benchmarks on more powerful machines and got comparable results. With a beefy enough computer, though (and/or fewer other programs running), you may find `N=5` or even `N=6` to be optimal.
 

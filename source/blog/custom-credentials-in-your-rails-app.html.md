@@ -2,7 +2,7 @@
 title: Replace .env with Rails Credentials in your Ruby on Rails app
 date: 2023-05-14 07:49
 description: A deep dive into the basics of Rails credentials, explore their benefits and drawbacks, and showing you how easy it is to integrate this powerful tool into your Rails app development process...
-images: ["/static/images/custom-credentials-in-your-rails-app/cover.png"]
+images: ["images/blog/custom-credentials-in-your-rails-app/cover.png"]
 tags: ["credentials"]
 ---
 

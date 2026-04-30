@@ -4,7 +4,7 @@ date: "2025-01-21"
 tags: ["ferrum", "web-scraping"]
 draft: false
 description: Learn how to setup Ruby and Ferrum for stealthy web scraping and browsing, including setting up correct headers, proxying requests, rotating your user agents, restricting bandwidth usage and more.
-images: ["/static/images/ferrum-stealth-browsing/cover.png"]
+images: ["images/blog/ferrum-stealth-browsing/cover.png"]
 ---
 
 > In this article, I share all the tips and best-practices I've found for web scraping with Ruby and [Ferrum](https://github.com/rubycdp/ferrum).

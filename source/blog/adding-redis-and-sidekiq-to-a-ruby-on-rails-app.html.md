@@ -5,7 +5,7 @@ tags: ["redis", "sidekiq", "development", "procfile", "popular"]
 draft: false
 description: Here are the basics of installing Redis and Sidekiq, and then adding Redis and Sidekiq to your Ruby on Rails app. This is everything you need to get set up — no fluff, just a couple of commands. Let's go!
 images:
-  ["/static/images/adding-redis-and-sidekiq-to-a-ruby-on-rails-app/cover.png"]
+  ["images/blog/adding-redis-and-sidekiq-to-a-ruby-on-rails-app/cover.png"]
 ---
 
 > In this article, I cover the basics of installing Redis and Sidekiq, and then adding Redis and Sidekiq to your Ruby on Rails app. No fluff, just a couple of commands. Let's go!
