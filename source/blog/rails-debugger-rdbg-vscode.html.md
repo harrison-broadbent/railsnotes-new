@@ -29,63 +29,63 @@ Just follow these steps to get set up —
 
 1. **Start by exporting `RUBY_DEBUG_OPEN=true` as an environment variable.** I do this within my `Procfile.dev` like:
 
-   ```sh:Procfile.dev
-   web: RUBY_DEBUG_OPEN=true bin/rails server -p 3000
-   sidekiq: RUBY_DEBUG_OPEN=true bundle exec sidekiq
-   ...
-   ```
+```sh:Procfile.dev
+web: RUBY_DEBUG_OPEN=true bin/rails server -p 3000
+sidekiq: RUBY_DEBUG_OPEN=true bundle exec sidekiq
+...
+```
 
-   > Note: I've exported that environment variable twice, for the `web:` and `sidekiq:` processes. This is so you can connect to instances of a `debugger` regardless of whether it's the `web:` or `sidekiq:` process that triggers it. You could also just export this globally from a `.env` file.
-   >
-   > I've also written extensively about [bin/dev and the Procfile.dev](https://railsnotes.xyz/blog/procfile-bin-dev-rails7) if you're interested.
+> Note: I've exported that environment variable twice, for the `web:` and `sidekiq:` processes. This is so you can connect to instances of a `debugger` regardless of whether it's the `web:` or `sidekiq:` process that triggers it. You could also just export this globally from a `.env` file.
+>
+> I've also written extensively about [bin/dev and the Procfile.dev](https://railsnotes.xyz/blog/procfile-bin-dev-rails7) if you're interested.
 
-   Exporting this environment variable means that when you drop `debugger` lines in your code, rather than launching an interactive session, you'll see `DEBUGGER: wait for debugger connection...`; We'll set up `rdbg` within VS Code to connect to this.
-   At the start of the `web:` process log you'll also see:
+Exporting this environment variable means that when you drop `debugger` lines in your code, rather than launching an interactive session, you'll see `DEBUGGER: wait for debugger connection...`; We'll set up `rdbg` within VS Code to connect to this.
+At the start of the `web:` process log you'll also see:
 
-   ```sh:Terminal
-   web | DEBUGGER: Debugger can attach via UNIX domain socket (/.../rdbg-72149)
-   ```
+```sh:Terminal
+web | DEBUGGER: Debugger can attach via UNIX domain socket (/.../rdbg-72149)
+```
 
 2. **Install the [VSCode rdbg Ruby Debugger extension](https://marketplace.visualstudio.com/items?itemName=KoichiSasada.vscode-rdbg).** This extension provides the adapter between VS Code and `rdbg/debugger`.
 
-   You can just install this extension directly, but it's also available in my [Ruby on Rails VS Code extension pack](https://marketplace.visualstudio.com/items?itemName=RailsNotes.railsnotes-ruby-on-rails-extension-pack) from my [Ruby on Rails / VS Code setup guide](https://railsnotes.xyz/blog/vscode-rails-setup).
+You can just install this extension directly, but it's also available in my [Ruby on Rails VS Code extension pack](https://marketplace.visualstudio.com/items?itemName=RailsNotes.railsnotes-ruby-on-rails-extension-pack) from my [Ruby on Rails / VS Code setup guide](https://railsnotes.xyz/blog/vscode-rails-setup).
 
 3. **Open the "Run and Debug" menu from within VS Code (⬆⌘D on MacOS).** Next, click _"create a launch.json file."_ (it's just text and not very obvious!) and select `Ruby (rdbg)`. This will create a `launch.json` file for the extension like this:
 
-   ```json:launch.json
-   {
-     "version": "0.2.0",
-     "configurations": [
-       {
-         "type": "rdbg",
-         "name": "Debug current file with rdbg",
-         "request": "launch",
-         "script": "${file}",
-         "args": [],
-         "askParameters": true
-       },
-       {
-         "type": "rdbg",
-         "name": "Attach with rdbg",
-         "request": "attach"
-       }
-     ]
-   }
-   ```
+```json:launch.json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "rdbg",
+      "name": "Debug current file with rdbg",
+      "request": "launch",
+      "script": "${file}",
+      "args": [],
+      "askParameters": true
+    },
+    {
+      "type": "rdbg",
+      "name": "Attach with rdbg",
+      "request": "attach"
+    }
+  ]
+}
+```
 
-   This JSON file defines two debugging configurations for VS Code. The main one you'll use with Rails is `Attach with rdbg`. This will attach the VS Code "Run and Debug" interface to the open debugger port in your app.
+This JSON file defines two debugging configurations for VS Code. The main one you'll use with Rails is `Attach with rdbg`. This will attach the VS Code "Run and Debug" interface to the open debugger port in your app.
 
 4. **With your Rails app running, adjust the dropdown in the VS Code "Run and Debug" menu so that "Attach with rdbg" is selected, then hit play (`►`).** Select the `rdbg` process to connect to, and a Ruby REPL will open:
 
-   ```sh:VSCODE_DEBUG_CONSOLE
-   Ruby REPL: You can run any Ruby expression here.
-   Note that output to the STDOUT/ERR printed on the TERMINAL.
-   [experimental]
-     `,COMMAND` runs `COMMAND` debug command (ex: `,info`).
-     `,help` to list all debug commands.
-   ```
+```sh:VSCODE_DEBUG_CONSOLE
+Ruby REPL: You can run any Ruby expression here.
+Note that output to the STDOUT/ERR printed on the TERMINAL.
+[experimental]
+  `,COMMAND` runs `COMMAND` debug command (ex: `,info`).
+  `,help` to list all debug commands.
+```
 
-   > Note: If you've set `RUBY_DEBUG_OPEN=true` for both your `web:` and `sidekiq:` processes, it can be hard to tell them apart! You can either 1. just connect to both, or 2. double-check the output in your terminal from when the process started, like `...attach via UNIX domain socket (/.../rdbg-72149)`, which tells you which `rdbg` to connect to (in this case, `rdbg-72149`).
+> Note: If you've set `RUBY_DEBUG_OPEN=true` for both your `web:` and `sidekiq:` processes, it can be hard to tell them apart! You can either 1. just connect to both, or 2. double-check the output in your terminal from when the process started, like `...attach via UNIX domain socket (/.../rdbg-72149)`, which tells you which `rdbg` to connect to (in this case, `rdbg-72149`).
 
 5. Within your Rails app, hit the code path to trigger the `debugger`. If everything is set up correctly, the debugging interface within VS Code will connect to your `debugger`, and you'll be able to interact with it from the `DEBUG CONSOLE` panel!
 
@@ -106,18 +106,18 @@ Here's just a rapid-fire grab bag of handy commands and tips I've picked up usin
 - Use `ls` for a detailed outline of the current scope, like the available methods and instance variables,
 - Use `list` or just `l` to show source code around your `debugger`, like:
 
-  ```sh:VSCODE_DEBUG_CONSOLE
-  ,list
-  (rdbg:command) list
-      1| class AppController < ApplicationController
-      2|   before_action :authenticate_user!
-      3|   layout "app"
-      4|
-      5|   def index
-  =>   6|     debugger
-      7|   end
-      8| end
-  ```
+```sh:VSCODE_DEBUG_CONSOLE
+,list
+(rdbg:command) list
+    1| class AppController < ApplicationController
+    2|   before_action :authenticate_user!
+    3|   layout "app"
+    4|
+    5|   def index
+=>   6|     debugger
+    7|   end
+    8| end
+```
 
 - Use `break [line_number]` or just `b [line_number]` to set additional breakpoints from your `debugger` session. This pairs well with the `list/l` command from above, letting you set a breakpoint a few lines ahead of your current session.
 - The VS Code "Run and Debug" section also has two checkboxes in the "Breakpoints" panel which let you trigger a `debugger` session on any exception or `RuntimeError` which can be handy to proactively catch things.
