@@ -11,6 +11,8 @@ images: ["images/blog/blazer-gem-rails/cover.png"]
 >
 > It takes 2 minutes to install and lets you [query your data](#a-typical-blazer-query-result) in SQL, assemble [queries into dashboards](#building-dashboards-from-blazer-queries), run [regular checks](#checks) and much more.
 
+---
+
 **I've been using — and loving — the [Blazer gem](https://github.com/ankane/blazer) a _lot_ lately.**
 
 (To the point where I now auto-add it to any new [side-project](https://attendlist.com)).
@@ -32,7 +34,7 @@ You'll probably spend about 90% of your time in Blazer crafting queries.
 
 Here's Blazer's query page:
 
-![The results page of a typical Blazer query: the auto-generated chart is a really cool touch.](images/blog/blazer-gem-rails/dashboard.png)
+![The results page of a typical Blazer query: the auto-generated chart is a really cool touch.](images/blog/blazer-gem-rails/dashboard.png) _The results page of a typical Blazer query: the auto-generated chart is a really cool touch._
 
 Your actual SQL query lives in the top-left, with the results below. Here, you can see Blazer's first trick: **charts**.
 

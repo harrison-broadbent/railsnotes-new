@@ -1,3 +1,4 @@
 - bin/ci script
 - moving over from JS to Middleman
 - organizations and entitlements
+- cloudflare 100% caching w/ controller concern to help

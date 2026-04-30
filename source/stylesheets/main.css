@@ -46,7 +46,7 @@ a {
 }
 
 #prose-content img {
-  @apply -mx-[12.5%] my-4 border border-stone-200 rounded-md w-[125%] max-w-[125%];
+  @apply -mx-[12.5%] my-4 p-4 border border-stone-200 rounded-xl w-[125%] max-w-[125%];
 }
 
 #prose-content > p > img + em {
